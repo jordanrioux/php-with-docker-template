@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: "./docker/services/php81/Dockerfile"
+    container_name: "framework_webserver"
+    restart: 'always'
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - database
+    volumes:
+      - ./:/var/www/html:cached
+      - ./docker/vhosts:/etc/apache2/sites-enabled
+      - ./docker/services/php81/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      #- ./logs/apache2:/var/log/apache2
+      #- ./logs/cron:/var/log/cron
+
+  database:
+    build:
+      context: "./docker/services/postgres"
+    container_name: 'framework_database'
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d/sql
+      - ./sql/database.sql:/docker-entrypoint-initdb.d/1-database.sql
+      - ./sql/data-mock.sql:/docker-entrypoint-initdb.d/2-data-mock.sql
+    restart: 'always'
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: 'framework'
+      POSTGRES_USER: 'dev'
+      POSTGRES_PASSWORD: 'dev'
