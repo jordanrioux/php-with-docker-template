@@ -1,0 +1,12 @@
+.top {
+    background-color: #E3350D;
+    padding: 0.5rem 0;
+}
+
+.top a {
+    color: #fff;    
+}
+
+.top .logo {
+    font-size: 1.5rem;
+}

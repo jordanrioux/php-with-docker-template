@@ -1,0 +1,151 @@
+.pokemon-filter {
+    border: 1px solid #909090;
+    display: flex;
+    margin-top: 2.5rem;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.pokemon-filter button {
+    background-color: #fff;
+    border: 0 none;
+    color: #909090;
+    cursor: pointer;
+    display: block;
+    padding: 1rem;
+    position: relative;
+    transition: color 300ms ease 0s;
+}
+
+.pokemon-filter button.is-selected {
+    color: #212121;
+}
+
+.pokemon-filter button.is-selected::after {
+    content: "";
+    background-color: #E3350D;
+    display: inline-block;
+    height: 3px;
+    margin: 2px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+}
+
+.pokemon-container {
+    --gap: 1.25rem;
+
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: flex-start;
+    padding-block: var(--gap);
+    gap: var(--gap);
+}
+
+.pokemon {
+    --width-per-item: 16.66666667%;
+
+    cursor: pointer;
+    margin: 1rem 0 1.75rem;
+    transition: transform 0.15s linear;
+    width: calc(var(--width-per-item) - var(--gap));
+}
+
+.pokemon:hover {
+    transform: translateY(-6px);
+}
+
+.pokemon figure {
+    background-color: #f2f2f2;
+    margin: 0;
+    text-align: center;
+}
+
+.pokemon figure img {
+    height: auto;
+    width: 100%;
+}
+
+.pokemon-info > span {
+    color: #909090;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-bottom: 0.65rem;
+}
+
+.pokemon-info h4 {
+    margin-bottom: 0.3rem;
+}
+
+.pokemon .types > span {
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.35rem;
+    padding: 0.1rem 0;
+    text-align: center;
+    width: 30%;
+}
+
+.pokemon .bug-type       { background-color: #729f3f; color: #fff; }
+.pokemon .dark-type      { background-color: #707070; color: #fff; }
+.pokemon .dragon-type    { background-color: #53a4cf; color: #fff; }
+.pokemon .electric-type  { background-color: #eed535; color: #212121; }
+.pokemon .fire-type      { background-color: #fd7d24; color: #fff; }
+.pokemon .fairy-type     { background-color: #fdb9e9; color: #212121 }
+.pokemon .fighting-type  { background-color: #d56723; color: #fff; }
+.pokemon .flying-type    { background-color: #3dc7ef; color: #212121; }
+.pokemon .ghost-type     { background-color: #7b62a3; color: #fff; }
+.pokemon .grass-type     { background-color: #9bcc50; color: #212121; }
+.pokemon .ground-type    { background-color: #f7de3f; color: #212121 }
+.pokemon .ice-type       { background-color: #51c4e7; color: #212121; }
+.pokemon .normal-type    { background-color: #a4acaf; color: #212121; }
+.pokemon .poison-type    { background-color: #b97fc9; color: #fff; }
+.pokemon .psychic-type   { background-color: #f366b9; color: #fff; }
+.pokemon .rock-type      { background-color: #a38c21; color: #fff; }
+.pokemon .steel-type     { background-color: #9eb7b8; color: #212121; }
+.pokemon .water-type     { background-color: #4592c4; color: #fff; }
+
+
+/**
+ *  On peut pas mettre de variables CSS dans les media queries puisque ce ne sont pas des éléments HTML et ils
+ *  n'héritent pas de ":root" ce qui fait que les variables ne sont pas disponibles.
+ *
+ *  En utilisant du SCSS, il serait possible d'avoir des variables pour les breakpoints, mais ce n'est pas possible en CSS.
+ */
+@media (max-width: 992px) {
+    .pokemon {   
+        --width-per-item: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    .pokemon {   
+        --width-per-item: 33.33333333%;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 180%;
+    }
+    .pokemon {   
+        --width-per-item: 100%;
+
+        padding-inline: 0;
+    }
+
+    /*
+     *  TODO(devoir):Adapter les filtres en forme de dropdown pour la version mobile ;-)
+     *  Pour l'instant, on cache tous les filtre sauf le "All".
+     */
+    .pokemon-filter {
+        justify-content: center;
+    }
+    .pokemon-filter [data-pokemon-type]:not([data-pokemon-type="all"]){
+        display: none;
+    }
+}

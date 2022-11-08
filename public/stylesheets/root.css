@@ -1,0 +1,9 @@
+:root {
+    --primary: #0d6efd;
+
+    --body-bg: #fff;
+    --body-color: #202020;
+    --spacer: 1rem;
+
+    --link-color: var(--primary);
+}

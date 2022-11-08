@@ -1,0 +1,9 @@
+@import "root.css";
+@import "reset.css";
+@import "layout.css";
+
+@import "components/header.css";
+@import "components/pokedex.css";
+
+@import "style.css";
+@import "utilities.css";

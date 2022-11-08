@@ -1,0 +1,96 @@
+/**
+ *  INCOMPLET! Simplement pour donner une idée de ce que les frameworks font pour vous.
+ *  Il faudrait inclure tous les éléments possibles. Si vous n'utilisez pas de frameworks, 
+ *  il est recommandé d'utiliser la librairie CSS "normalize": https://necolas.github.io/normalize.css/.
+ */
+
+ html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: calc(var(--spacer) * .5);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+/**
+ * Paragraphs
+ */
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/**
+ * Lists
+ */
+ol, ul {
+    padding-left: 2rem;
+}
+ 
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+ 
+ol ol, 
+ul ul, 
+ol ul,
+ul ol {
+    margin-bottom: 0;
+}
+
+/**
+ * Links
+ */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    filter: brightness(82.5%);
+}

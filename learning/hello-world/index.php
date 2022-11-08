@@ -9,7 +9,7 @@
 <body>
     <h1>Hello World en PHP!</h1>
     <!-- 
-        On insère le code PHP dans les balises <?php /* commentaire */ ?> 
+        On insère le code PHP dans les balises <?php /* commentaires */ ?> 
 
         Le code PHP est exécuter sur le serveur et il sert à générer la réponse qui consiste à du HTML (ou autre).
         Ce code n'est pas visible! Regarder la source de la page généré!

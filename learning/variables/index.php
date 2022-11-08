@@ -2,6 +2,7 @@
 // NOTE: Si votre fichier PHP ne contient aucun code HTML (seulement du PHP), il est recommandé de ne pas fermer 
 //       la balise <?php et laisser le PHP s'en occuper pour empêcher des espaces inutiles la réponse générée.
 
+
 // Les variables commencent avec un $
 $a = 1;
 $b = 2.2;
